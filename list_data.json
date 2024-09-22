@@ -1,22 +1,62 @@
 {
-	"movies": [
+	"Games": [
 		{
-			"Title": "Lost In Translation",
-			"Director": "Sofia Coppola",
-			"Rating": "R",
-			"Year": "2003"
+			"Title": "Baldur's Gate 3",
+			"Publisher": "Larian Studios",
+			"Personal Rating": "10/10",
+			"Release": "2023",
+			"Genre": "Roleplaying"
 		},
 		{
-			"Title": "Casino Royale",
-			"Director": "Martin Campbell",
-			"Rating": "PG-13",
-			"Year": "2006"
+			"Title": "Night in the Woods",
+			"Publisher": "Finji",
+			"Personal Rating": "10/10",
+			"Release": "2017",
+			"Genre": "Adventure"
 		},
 		{
-			"Title": "The Dark Knight",
-			"Director": "Christopher Nolan",
-			"Rating": "PG-13",
-			"Year": "2008"
+			"Title": "Starbound",
+			"Publisher": "Chucklefish Games",
+			"Personal Rating": "9/10",
+			"Release": "2016",
+			"Genre": "Adventure"
+		}
+		{
+			"Title": "Stardew Valley",
+			"Publisher": "Concerned Ape",
+			"Personal Rating": "10/10",
+			"Release": "2016",
+			"Genre": "Simulator"
+		}
+		{
+			"Title": "Minecraft",
+			"Publisher": "Mojang Studios",
+			"Personal Rating": "9/10",
+			"Release": "2011",
+			"Genre": "Adventure"
+		}
+	],
+	"Books": [
+		{
+			"Title": "Norse Mythology",
+			"Author": "Neil Gaiman",
+			"Personal Rating": "10/10",
+			"Release": "2017",
+			"Genre": "Fantasy"
+		},
+		{
+			"Title": "Tom Lake",
+			"Author": "Ann Patchett",
+			"Personal Rating": "6/10",
+			"Release": "2023",
+			"Genre": "Literary"
+		},
+		{
+			"Title": "The Secret History",
+			"Author": "Donna Tartt",
+			"Personal Rating": "8/10",
+			"Release": "1992",
+			"Genre": "Thriller"
 		}
 	]
 }
