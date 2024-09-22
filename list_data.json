@@ -4,36 +4,31 @@
 			"Title": "Baldur's Gate 3",
 			"Publisher": "Larian Studios",
 			"Personal Rating": "10/10",
-			"Release": "2023",
-			"Genre": "Roleplaying"
+			"Release": "2023"
 		},
 		{
 			"Title": "Night in the Woods",
 			"Publisher": "Finji",
 			"Personal Rating": "10/10",
-			"Release": "2017",
-			"Genre": "Adventure"
+			"Release": "2017"
 		},
 		{
 			"Title": "Starbound",
 			"Publisher": "Chucklefish Games",
 			"Personal Rating": "9/10",
-			"Release": "2016",
-			"Genre": "Adventure"
+			"Release": "2016"
 		}
 		{
 			"Title": "Stardew Valley",
 			"Publisher": "Concerned Ape",
 			"Personal Rating": "10/10",
-			"Release": "2016",
-			"Genre": "Simulator"
+			"Release": "2016"
 		}
 		{
 			"Title": "Minecraft",
 			"Publisher": "Mojang Studios",
 			"Personal Rating": "9/10",
-			"Release": "2011",
-			"Genre": "Adventure"
+			"Release": "2011"
 		}
 	]
 }
