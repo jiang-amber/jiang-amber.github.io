@@ -1,5 +1,5 @@
 {
-	"Games": [
+	"games": [
 		{
 			"Title": "Baldur's Gate 3",
 			"Publisher": "Larian Studios",
@@ -17,6 +17,12 @@
 			"Publisher": "Chucklefish Games",
 			"Personal Rating": "9/10",
 			"Release": "2016"
+		},
+		{
+			"Title": "SABCd",
+			"Publisher": "SDF",
+			"Personal Rating": "9SDF",
+			"Release": "2SD"
 		}
 	]
 }
