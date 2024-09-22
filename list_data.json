@@ -26,3 +26,31 @@
 		}
 	]
 }
+{
+	"Games": [
+		{
+			"Title": "Baldur's Gate 3",
+			"Publisher": "Larian Studios",
+			"Personal Rating": "10/10",
+			"Release": "2023"
+		},
+		{
+			"Title": "Night in the Woods",
+			"Publisher": "Finji",
+			"Personal Rating": "10/10",
+			"Release": "2017"
+		},
+		{
+			"Title": "Starbound",
+			"Publisher": "Chucklefish Games",
+			"Personal Rating": "9/10",
+			"Release": "2016"
+		},
+		{
+			"Title": "Meow",
+			"Publisher": "Ces",
+			"Personal Rating": "7/10",
+			"Release": "2216"
+		}
+	]
+}
