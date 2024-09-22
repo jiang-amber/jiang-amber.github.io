@@ -35,28 +35,5 @@
 			"Release": "2011",
 			"Genre": "Adventure"
 		}
-	]/*,
-	"Books": [
-		{
-			"Title": "Norse Mythology",
-			"Author": "Neil Gaiman",
-			"Personal Rating": "10/10",
-			"Release": "2017",
-			"Genre": "Fantasy"
-		},
-		{
-			"Title": "Tom Lake",
-			"Author": "Ann Patchett",
-			"Personal Rating": "6/10",
-			"Release": "2023",
-			"Genre": "Literary"
-		},
-		{
-			"Title": "The Secret History",
-			"Author": "Donna Tartt",
-			"Personal Rating": "8/10",
-			"Release": "1992",
-			"Genre": "Thriller"
-		}
-	]*/
+	]
 }
