@@ -11,16 +11,16 @@
       rel="stylesheet"
     />
 
-    <title>Amber's Kitchen</title>
+    <title>Amber's Recipe Book</title>
   </head>
   <body>
     <header class="center">
       <h1>Amber's Recipe Book</h1>
       <p>
         Welcome to my personal recipe book and memory-keeping food blog, where I
-        collect tried and true recipes and meaningful moments into a diary of
-        sorts. These recipes may range from famous recipes from respected chefs
-        to strange concoctions from my own mind.
+        collect random recipes and meaningful moments into a diary of sorts.
+        These recipes may range from famous recipes from respected chefs to
+        strange concoctions from my own mind.
       </p>
     </header>
     <div id="grid" class="grid" aria-live="polite"></div>
@@ -29,7 +29,9 @@
       class="center pagination"
       aria-label="Pagination"
     ></nav>
-    <footer class="center">Site designed and coded by Amber.</footer>
+    <footer class="center" style="color: #6e203c">
+      Site designed and coded by Amber.
+    </footer>
     <script>
       const PAGE_SIZE = 12;
       let ITEMS = [];
@@ -68,7 +70,7 @@
         });
 
         if (items.length === 0) {
-          grid.innerHTML = "<p>No items to display.</p>";
+          grid.innerHTML = "<p>Stay tuned for recipes.</p>";
         }
       }
 
@@ -151,18 +153,23 @@
       }
 
       function formatDate(d) {
-        if (!d) return "";
-        try {
-          const dt = new Date(d);
-          if (isNaN(dt)) return d;
+        const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
+        if (m) {
+          const [_, y, mo, da] = m;
+          const dt = new Date(Number(y), Number(mo) - 1, Number(da));
           return dt.toLocaleDateString(undefined, {
             year: "numeric",
             month: "2-digit",
             day: "2-digit",
           });
-        } catch {
-          return d;
         }
+        const dt = new Date(d);
+        if (isNaN(dt)) return d;
+        return dt.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        });
       }
 
       async function loadData() {

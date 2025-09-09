@@ -1,16 +1,16 @@
 [
   {
-    "title": "The Perfect Sandwich, A Real NYC Classic",
-    "date": "2025-09-08",
+    "title": "Second",
+    "date": "2025-09-19",
     "text": "Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.",
-    "href": "/posts/perfect-sandwich.html",
+    "href": "",
     "img": "cover_images/placeholder.jpg"
   },
   {
-    "title": "Grandma’s Apple Pie",
-    "date": "2025-09-05",
-    "text": "Cinnamon, butter, flaky crust. A family classic.",
-    "href": "/posts/apple-pie.html",
+    "title": "Black Beans and Rice with Pork Chops and Apples",
+    "date": "2025-09-11",
+    "text": "Comfort food for two. Trying new autumn-appropriate recipes to welcome the changing seasons.",
+    "href": "posts/20250911_beans_pork.html",
     "img": "cover_images/placeholder.jpg"
   }
 ]
