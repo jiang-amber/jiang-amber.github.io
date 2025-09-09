@@ -1,0 +1,16 @@
+[
+  {
+    "title": "The Perfect Sandwich, A Real NYC Classic",
+    "date": "2025-09-08",
+    "text": "Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.",
+    "href": "/posts/perfect-sandwich.html",
+    "img": "cover_images/placeholder.jpg"
+  },
+  {
+    "title": "Grandma’s Apple Pie",
+    "date": "2025-09-05",
+    "text": "Cinnamon, butter, flaky crust. A family classic.",
+    "href": "/posts/apple-pie.html",
+    "img": "cover_images/placeholder.jpg"
+  }
+]

@@ -23,88 +23,172 @@
         to strange concoctions from my own mind.
       </p>
     </header>
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <nav
+      id="pagination"
+      class="center pagination"
+      aria-label="Pagination"
+    ></nav>
+    <footer class="center">Site designed and coded by Amber.</footer>
+    <script>
+      const PAGE_SIZE = 12;
+      let ITEMS = [];
+      let currentPage = 1;
 
-    <div class="grid">
-      <a class="grid-box" href="">
-        <div class="grid-quarter">
-          <img
-            src="cover_images\placeholder.jpg"
-            alt="EDIT"
-            object-fit="cover"
-          />
-          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-          <p style="font-size: x-small">09/08/2025</p>
-          <p>
-            Just some random text, lorem ipsum text praesent tincidunt ipsum
-            lipsum.
-          </p>
-        </div>
-      </a>
-      <a class="grid-box" href="">
-        <div class="grid-quarter">
-          <img
-            src="cover_images\placeholder.jpg"
-            alt="EDIT"
-            object-fit="cover"
-          />
-          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-          <p style="font-size: x-small">09/08/2025</p>
-          <p>
-            Just some random text, lorem ipsum text praesent tincidunt ipsum
-            lipsum.
-          </p>
-        </div>
-      </a>
-      <a class="grid-box" href="">
-        <div class="grid-quarter">
-          <img
-            src="cover_images\placeholder.jpg"
-            alt="EDIT"
-            object-fit="cover"
-          />
-          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-          <p style="font-size: x-small">09/08/2025</p>
-          <p>
-            Just some random text, lorem ipsum text praesent tincidunt ipsum
-            lipsum.
-          </p>
-        </div>
-      </a>
-      <a class="grid-box" href="">
-        <div class="grid-quarter">
-          <img
-            src="cover_images\placeholder.jpg"
-            alt="EDIT"
-            object-fit="cover"
-          />
-          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-          <p style="font-size: x-small">09/08/2025</p>
-          <p>
-            Just some random text, lorem ipsum text praesent tincidunt ipsum
-            lipsum.
-          </p>
-        </div>
-      </a>
-    </div>
+      function getTotalPages() {
+        return Math.max(1, Math.ceil(ITEMS.length / PAGE_SIZE));
+      }
 
-    <!-- Pagination -->
-    <div class="center">
-      <div class="pagination">
-        <a href="#" class="">«</a>
-        <a href="#" class="">1</a>
-        <a href="#" class="">2</a>
-        <a href="#" class="">3</a>
-        <a href="#" class="">4</a>
-        <a href="#" class="">»</a>
-      </div>
-    </div>
+      function getSliceForPage(page) {
+        const start = (page - 1) * PAGE_SIZE;
+        return ITEMS.slice(start, start + PAGE_SIZE);
+      }
+
+      function renderGrid(page) {
+        const grid = document.getElementById("grid");
+        grid.innerHTML = "";
+        const items = getSliceForPage(page);
+
+        items.forEach((item) => {
+          const a = document.createElement("a");
+          a.className = "grid-box";
+          a.href = item.href || "#";
+
+          const card = document.createElement("div");
+          card.className = "grid-quarter";
+          card.innerHTML = `
+          <img src=${item.img} alt="${item.title || "Recipe"}" />
+          <h3>${item.title || "Untitled"}</h3>
+          <p style="font-size: x-small">${formatDate(item.date)}</p>
+          <p>${item.text || ""}</p>
+          `;
+
+          a.appendChild(card);
+          grid.appendChild(a);
+        });
+
+        if (items.length === 0) {
+          grid.innerHTML = "<p>No items to display.</p>";
+        }
+      }
+
+      function buildPageList(current, total, siblings = 1, edges = 1) {
+        const pages = new Set();
+        for (let i = 1; i <= Math.min(edges, total); i++) pages.add(i);
+        const start = Math.max(1, current - siblings);
+        const end = Math.min(total, current + siblings);
+        for (let i = start; i <= end; i++) pages.add(i);
+        for (let i = Math.max(1, total - edges + 1); i <= total; i++)
+          pages.add(i);
+        const sorted = Array.from(pages).sort((a, b) => a - b);
+        const result = [];
+        for (let i = 0; i < sorted.length; i++) {
+          const p = sorted[i];
+          if (i === 0) result.push(p);
+          else {
+            const prev = sorted[i - 1];
+            if (p === prev + 1) result.push(p);
+            else {
+              result.push("…");
+              result.push(p);
+            }
+          }
+        }
+        return result;
+      }
+
+      function renderPagination(page) {
+        const total = getTotalPages();
+        const container = document.getElementById("pagination");
+        container.innerHTML = "";
+
+        const makeBtn = (
+          label,
+          pageNum,
+          disabled = false,
+          isActive = false
+        ) => {
+          const a = document.createElement("a");
+          a.href = "#";
+          a.textContent = label;
+          if (isActive) a.classList.add("active");
+          if (disabled) {
+            a.classList.add("disabled");
+            a.setAttribute("aria-disabled", "true");
+            a.tabIndex = -1;
+          } else {
+            a.addEventListener("click", (e) => {
+              e.preventDefault();
+              goToPage(pageNum);
+            });
+          }
+          return a;
+        };
+
+        container.appendChild(makeBtn("«", Math.max(1, page - 1), page === 1));
+        buildPageList(page, total, 1, 1).forEach((item) => {
+          if (item === "…") {
+            const span = document.createElement("span");
+            span.className = "ellipsis";
+            span.textContent = "…";
+            container.appendChild(span);
+          } else {
+            container.appendChild(
+              makeBtn(String(item), item, false, item === page)
+            );
+          }
+        });
+        container.appendChild(
+          makeBtn("»", Math.min(total, page + 1), page === total)
+        );
+      }
+
+      function goToPage(page) {
+        const total = getTotalPages();
+        currentPage = Math.min(Math.max(1, page), total);
+        renderGrid(currentPage);
+        renderPagination(currentPage);
+      }
+
+      function formatDate(d) {
+        if (!d) return "";
+        try {
+          const dt = new Date(d);
+          if (isNaN(dt)) return d;
+          return dt.toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          });
+        } catch {
+          return d;
+        }
+      }
+
+      async function loadData() {
+        const grid = document.getElementById("grid");
+        grid.innerHTML = "<p>Loading…</p>";
+        try {
+          const res = await fetch("recipes.json", { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const data = await res.json();
+
+          ITEMS = Array.isArray(data)
+            ? data
+            : Array.isArray(data.items)
+            ? data.items
+            : [];
+          ITEMS.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+          goToPage(1);
+        } catch (err) {
+          grid.innerHTML =
+            "<p>Failed to load recipes. Please try again later.</p>";
+          console.error("Failed to load recipes:", err);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadData);
+    </script>
   </body>
-
-  <footer class="center">Site designed and coded by Amber.</footer>
-
-  <script>
-    $(document).ready(function () {
-      $("#myTable").dataTable();
-    });
-  </script>
 </html>

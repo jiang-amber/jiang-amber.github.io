@@ -89,7 +89,7 @@ p {
 }
 
 .pagination {
-  display: inline-block;
+  display: block;
   margin: 40px 0px;
 }
 
@@ -99,11 +99,13 @@ p {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.5s;
+  margin: 0px 4px;
 }
 
 .pagination a.active {
   background-color: #c67193;
   color: white;
+  font-weight: bold;
 }
 
 .pagination a:hover:not(.active) {
