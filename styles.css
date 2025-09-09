@@ -5,7 +5,7 @@
 }
 
 body {
-  margin: 40px 20px;
+  margin: 60px 20px;
   background-color: #f5dce6;
 }
 
@@ -67,7 +67,8 @@ header {
 }
 
 .grid-quarter,
-.ing-box h3,
+.ing-box,
+h3,
 p {
   margin-bottom: 8px;
 }
@@ -137,6 +138,26 @@ p {
 
 .ing-box li {
   margin: 0px 0px 4px 0px;
+}
+
+.blog-body {
+  max-width: 900px;
+  margin: 0px auto 0px auto;
+  padding: 0px 0px 24px 0px;
+}
+
+.blog-body h3,
+p {
+  margin-bottom: 12px;
+}
+
+.blog-body img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0px 12px 12px 0px;
 }
 
 @media screen and (max-width: 1300px) {
