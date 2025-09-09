@@ -3,16 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amber's Recipe Book</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Amber's Kitchen</title>
   </head>
   <body>
-    <h1>Amber's Recipe Book</h1>
-    <p>
-      Welcome to my personal recipe book, where I collect recipes that are tried
-      and true, be it famous recipes from respected chefs or strange concoctions
-      from my own mind.
-    </p>
+    <header>
+      <h1>Amber's Recipe Book</h1>
+      <p>
+        Welcome to my personal recipe book and memory-keeping food blog, where I
+        collect tried and true recipes and meaningful moments into a diary of
+        sorts. These recipes may range from famous recipes from respected chefs
+        to strange concoctions from my own mind.
+      </p>
+    </header>
+
+    <div class="grid">
+      <a href="">
+        <div class="grid-quarter">
+          <img
+            src="cover_images\placeholder.jpg"
+            alt="EDIT"
+            object-fit="cover"
+          />
+          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+          <p>
+            Just some random text, lorem ipsum text praesent tincidunt ipsum
+            lipsum.
+          </p>
+        </div>
+      </a>
+      <a href="">
+        <div class="grid-quarter">
+          <img
+            src="cover_images\placeholder.jpg"
+            alt="EDIT"
+            object-fit="cover"
+          />
+          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+          <p>
+            Just some random text, lorem ipsum text praesent tincidunt ipsum
+            lipsum.
+          </p>
+        </div>
+      </a>
+      <a href="">
+        <div class="grid-quarter">
+          <img
+            src="cover_images\placeholder.jpg"
+            alt="EDIT"
+            object-fit="cover"
+          />
+          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+          <p>
+            Just some random text, lorem ipsum text praesent tincidunt ipsum
+            lipsum.
+          </p>
+        </div>
+      </a>
+      <a href="">
+        <div class="grid-quarter">
+          <img
+            src="cover_images\placeholder.jpg"
+            alt="EDIT"
+            object-fit="cover"
+          />
+          <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+          <p>
+            Just some random text, lorem ipsum text praesent tincidunt ipsum
+            lipsum.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+      <div class="w3-bar">
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+      </div>
+    </div>
   </body>
+
+  <footer>Site designed and coded by Amber.</footer>
+
   <script>
     $(document).ready(function () {
       $("#myTable").dataTable();
