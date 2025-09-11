@@ -29,7 +29,7 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
   justify-content: center;
 }
 
@@ -161,9 +161,9 @@ p {
 }
 
 @media screen and (max-width: 1300px) {
-  .grid {
+  /* .grid {
     grid-template-columns: auto auto auto;
-  }
+  } */
   .body-img {
     width: 85%;
   }
