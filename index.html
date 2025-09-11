@@ -29,7 +29,7 @@
       class="center pagination"
       aria-label="Pagination"
     ></nav>
-    <footer class="center" style="color: #6e203c">
+    <footer class="center" style="color: lightgray">
       Site designed and coded by Amber.
     </footer>
     <script>
@@ -91,7 +91,7 @@
             const prev = sorted[i - 1];
             if (p === prev + 1) result.push(p);
             else {
-              result.push("…");
+              result.push(" … ");
               result.push(p);
             }
           }
@@ -129,10 +129,10 @@
 
         container.appendChild(makeBtn("«", Math.max(1, page - 1), page === 1));
         buildPageList(page, total, 1, 1).forEach((item) => {
-          if (item === "…") {
+          if (item === " … ") {
             const span = document.createElement("span");
             span.className = "ellipsis";
-            span.textContent = "…";
+            span.textContent = " … ";
             container.appendChild(span);
           } else {
             container.appendChild(
