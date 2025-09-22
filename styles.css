@@ -64,7 +64,8 @@ header {
 
 .grid-quarter:hover {
   box-shadow: 4px 4px 0px 0px coral, -4px -4px 00px 0px dodgerblue;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
+  transform: translateY(-4px);
 }
 
 .grid-quarter img {
